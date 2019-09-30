@@ -1,0 +1,99 @@
+<AddScreen>:
+	GridLayout:
+        rows: 2
+        MDToolbar:
+            id: toolbar
+            title: "Advanced Search"
+            md_bg_color: app.theme_cls.primary_color
+            background_palette: 'Primary'
+            background_hue: '500'
+            elevation: 10
+            left_action_items: [['arrow-left', lambda x: root.on_back_pressed()]]
+		ScrollView:
+			do_scroll_x: False
+			size_hint: 1, 1
+			MDList:
+				orientation: "vertical"
+				cols: 1
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "First Name: "
+							markup: True
+							color: utils.get_color_from_hex("#0f0f0f")
+						TextInput:
+							id: fnameTextField
+							text_size: self.size
+							text: ""
+							multiline: False
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "Surname: "
+							markup: True
+							color: utils.get_color_from_hex("#0f0f0f")
+						TextInput:
+							id: snameTextField
+							text_size: self.size
+							text: ""
+							multiline: False
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "ID Number: "
+							markup: True
+							color: utils.get_color_from_hex("#0f0f0f")
+						TextInput:
+							id: idNumTextField
+							text_size: self.size
+							text: ""
+							
+							multiline: False
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "Date of Birth: "
+							markup: True
+							color: utils.get_color_from_hex("#0f0f0f")
+						BoxLayout:
+							orientation: "vertical"
+							MDRaisedButton:
+								id: dobDateButton
+								text_size: self.size
+								text: "Choose a Date"
+								opposite_colors: True
+								on_release: root.showDatePicker()
+							Label:
+								id: idNumDateConfLabel
+								text_size: self.size
+								text: "Dateconf"
+								markup: True
+								color: utils.get_color_from_hex("#0f0f0f")
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: ""
+							markup: True
+							color: utils.get_color_from_hex("#0f0f0f")
+						MDRaisedButton:
+							id: addPersonButton
+							opposite_colors: True
+							text: "Submit Info"
+							opposite_colors: True
+							on_release: root.addPerson()
+							

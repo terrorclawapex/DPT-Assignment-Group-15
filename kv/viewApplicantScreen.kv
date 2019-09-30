@@ -1,0 +1,44 @@
+<ViewScreen>:
+	GridLayout:
+        rows: 2
+        MDToolbar:
+            id: toolbar
+            title: "View Current Applicants"
+            md_bg_color: app.theme_cls.primary_color
+            background_palette: 'Primary'
+            background_hue: '500'
+            elevation: 10
+            left_action_items: [['arrow-left', lambda x: root.on_back_pressed()]]
+	    BoxLayout:
+			orientation: "horizontal"
+			BoxLayout:
+			    size_hint_y: None
+	            height: "60dp"
+				orientation: "vertical"
+				TextInput:
+				    size_hint_x: 20
+					id: searchbar
+					multiline: False
+				Button:
+					text: "Search"
+					id: searchButton
+					on_release: root.runSearch()
+					size_hint_x: 3
+			BoxLayout:
+			    size_hint_y: None
+	            height: "20dp"
+				orientation: "horizontal"
+                Label:
+                    id: resultText
+                    text_size: self.size
+                    text: ""
+                    markup: True
+                    color: utils.get_color_from_hex("#ff0f0f")
+			ScrollView:
+				do_scroll_x: False
+				size_hint: 1, 1
+				MDList:
+					orientation: "vertical"
+					id: studentResult
+					cols: 1
+

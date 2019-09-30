@@ -1,0 +1,71 @@
+<StudentInfo>:
+	GridLayout:
+        rows: 2
+        MDToolbar:
+            id: toolbar
+            title: "Applicant Info"
+            md_bg_color: app.theme_cls.primary_color
+            background_palette: 'Primary'
+            background_hue: '500'
+            elevation: 10
+            left_action_items: [['arrow-left', lambda x: root.on_back_pressed()]]
+		ScrollView:
+			do_scroll_x: False
+			size_hint: 1, 1
+			MDList:
+				orientation: "vertical"
+				cols: 1
+				BoxLayout:
+					orientation: "vertical"
+					BoxLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "First Name: "
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+						Label:
+							id: firstnameLabel
+							text_size: self.size
+							text: "Firstname Placeholder"
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+					GridLayout:
+						orientation: "horizontal"
+						cols: 2
+						Label:
+							text: "Surname: "
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+						Label:
+							id: surnameLabel
+							text_size: self.size
+							text: "surname Placeholder"
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+					GridLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "ID Number: "
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+						Label:
+							id: idnumberLabel
+							text_size: self.size
+							text: "ID Placeholder"
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+					GridLayout:
+						cols: 2
+						orientation: "horizontal"
+						Label:
+							text: "Date of Birth: "
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
+						Label:
+							id: dateofbirthLabel
+							text_size: self.size
+							text: "dob Placeholder"
+							markup: True
+							color: utils.get_color_from_hex("#ff0f0f")
