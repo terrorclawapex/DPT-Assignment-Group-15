@@ -1,9 +1,4 @@
 
-CREATE DATABASE ScholarshipHelperDB;
-Go
-USE ScholarshipHelperDB;
-
-
 create table UserGeneric
 (
 	
